@@ -786,6 +786,8 @@ $('b2').onclick=()=>{isOnline=false;CFG=JSON.parse(JSON.stringify(DEF));RN='';be
 // ===== ONLINE =====
 // Diretório de salas sem servidor próprio: quem abre o jogo primeiro vira o "hub" (peer com ID fixo)
 // e guarda a lista; os demais se conectam nele para publicar/listar salas. Se o hub sair, outro assume.
+const PCFG={config:{iceServers:[{urls:'stun:stun.l.google.com:19302'},{urls:'stun:stun1.l.google.com:19302'},{urls:['turn:openrelay.metered.ca:80','turn:openrelay.metered.ca:443','turn:openrelay.metered.ca:443?transport=tcp'],username:'openrelayproject',credential:'openrelayproject'}]}};
+const mkPeer=id=>id?new Peer(id,PCFG):new Peer(PCFG);
 const RoomDir={
  LID:'geekchess-lobby-v1',p:null,hub:false,link:null,rooms:{},mine:{},pend:null,waiter:null,
  ok(r){return !!r&&typeof r==='object'&&typeof r.id==='string'&&/^geekchess-[a-z0-9]{4,12}$/.test(r.id)},
@@ -812,9 +814,9 @@ const RoomDir={
    let done=false,to=0;
    const fin=v=>{if(done)return;done=true;clearTimeout(to);this.pend=null;res(v)};
    if(typeof Peer==='undefined')return fin(false);
-   to=setTimeout(()=>{this.reset();fin(false)},9000);
+   to=setTimeout(()=>{this.reset();fin(false)},14000);this.tries=0;
    const asClient=()=>{
-    let p;try{p=new Peer()}catch(e){return fin(false)}
+    let p;try{p=mkPeer()}catch(e){return fin(false)}
     this.p=p;this.hub=false;
     p.on('open',()=>{
      if(this.p!==p)return;
@@ -823,9 +825,10 @@ const RoomDir={
      const gone=()=>{if(this.link===c)this.link=null};
      c.on('close',gone);c.on('error',gone);
     });
-    p.on('error',()=>{if(this.p!==p)return;this.reset();fin(false)});
+    p.on('error',e=>{if(this.p!==p)return;this.reset();if(e&&e.type==='peer-unavailable'&&!done&&(this.tries=(this.tries||0)+1)<4){setTimeout(()=>{if(!done)tryHub()},1500);return}fin(false)});
    };
-   let h;try{h=new Peer(this.LID)}catch(e){return fin(false)}
+   const tryHub=()=>{
+   let h;try{h=mkPeer(this.LID)}catch(e){return fin(false)}
    this.p=h;
    h.on('connection',c=>{if(this.p===h&&this.hub)this.serve(c)});
    h.on('open',()=>{if(this.p!==h)return;this.hub=true;fin(true)});
@@ -835,6 +838,7 @@ const RoomDir={
     if(e.type==='unavailable-id'){this.p=null;try{h.destroy()}catch(_){}asClient()}
     else{this.reset();fin(false)}
    });
+   };tryHub();
   });
  },
  push(id){
@@ -856,6 +860,7 @@ const RoomDir={
   });
  }
 };
+addEventListener('pagehide',()=>{try{RoomDir.reset()}catch(e){}try{if(peer)peer.destroy()}catch(e){}});
 let rmSelf=false,rmOpp=false,netRun=false,roomHb=null,myRoomId=null;const netQ=[];
 function cleanNet(){netQ.length=0;rmSelf=false;rmOpp=false}
 function closeRoomListing(){clearInterval(roomHb);roomHb=null;if(myRoomId){RoomDir.remove(myRoomId);myRoomId=null}}
@@ -903,10 +908,11 @@ $('b3').onclick=()=>{
  leaveOnline();
  isOnline=true;myTeam='BLACK';LOCAL=false;
  const code=genCode(),id='geekchess-'+code;
- const me=new Peer(id);peer=me;
+ const me=mkPeer(id);peer=me;
  const info={id,name:RN||'SALA DE XADREZ',mode:CFG.mode=='dano'?'dano':'classico',priv:CFG.isPrivate?1:0};
+ const cto=setTimeout(()=>{if(peer===me&&!me.open){leaveOnline();showModal('SEM CONEXÃO','Não consegui falar com o servidor online. Verifique a internet do celular (tente trocar Wi-Fi/dados móveis), desative VPN/economia de dados e tente de novo.')}},12000);
  me.on('open',()=>{
-  if(peer!==me)return;
+  clearTimeout(cto);if(peer!==me)return;
   myRoomId=id;RoomDir.publish(info);roomHb=setInterval(()=>RoomDir.publish(info),5000);
   floor=1;$('end').classList.remove('on');$('scr').style.display='none';reset();busy=true;rcShow(code,CFG.isPrivate);
   if(CFG.isPrivate)showModal('SALA PRIVADA','Código da sala: '+code.toUpperCase()+'\nSenha: '+pw+'\n\nPasse o código (ou toque em COPIAR LINK) e a senha para seu rival. O jogo começa quando ele entrar.');
@@ -932,9 +938,9 @@ $('b3').onclick=()=>{
  });
  me.on('disconnected',()=>{if(peer===me&&!me.destroyed){try{me.reconnect()}catch(e){}}});
  me.on('error',err=>{
-  if(peer!==me)return;
+  clearTimeout(cto);if(peer!==me)return;
   if(err.type==='unavailable-id'){leaveOnline();showModal('ERRO','Não foi possível criar a sala. Tente de novo.')}
-  else if(err.type!=='peer-unavailable'){showModal('ERRO DE CONEXÃO','Não foi possível manter a sala ('+err.type+').')}
+  else if(err.type!=='peer-unavailable'){leaveOnline();showModal('ERRO DE CONEXÃO','Não foi possível criar/manter a sala ('+err.type+'). Verifique a internet e tente de novo.')}
  });
 };
 
@@ -961,7 +967,7 @@ async function joinRoom(id,priv){
  let pw='';
  if(priv){pw=await showModal('SALA PRIVADA','Digite a senha da sala:',true);if(pw===null||pw===undefined)return;pw=String(pw).trim()}
  leaveOnline();joinTarget=id;
- const me=new Peer();peer=me;let ok=false;
+ const me=mkPeer();peer=me;let ok=false;
  const fail=(t,b)=>{if(peer!==me)return;leaveOnline();showModal(t,b).then(fetchRooms)};
  const to=setTimeout(()=>{if(!ok)fail('SEM RESPOSTA','Não foi possível conectar à sala. Tente de novo.')},12000);
  me.on('open',()=>{
