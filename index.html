@@ -197,116 +197,6 @@ button.xfo.on{border-color:#ffe066}
 .hc .tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
 .hc .nm{flex:1;min-width:0;line-height:1.4;font-weight:400}.hc .tx .nm{flex:none}
 .hc .cc{font-size:7px}
-.inf{flex:none;width:22px;height:22px;display:grid;place-items:center;border:2px ar(--rose);line-height:1.5}
-#tip{position:fixed;left:50%;top:calc(64px + env(safe-area-inset-top,0px));transform:translateX(-50%);z-index:44;background:var(--pn);border:3px solid var(--lav);padding:8px 12px;max-width:90vw;display:none;pointer-events:none;text-align:center}
-#pp{position:fixed;z-index:46;display:none;flex-direction:column;gap:6px}
-#pp button{padding:8px 10px;font-size:8px}
-#pp.fl button{font-size:inherit}
-#pp.fl{gap:3px;padding:0}
-#pp.fl button{width:100%;padding:5px 2px;background:rgba(238,8,94,.62);border:2px solid rgba(244,224,195,.7);color:var(--cream);text-shadow:1px 1px 0 #121A32;opacity:.85;animation:flt 1.7s ease-in-out infinite;}
-#pp.fl button+button{background:rgba(26,35,61,.72);border-color:rgba(157,129,167,.85);animation-delay:-.85s}
-#pp.fl button:hover{opacity:1}
-@keyframes flt{0%,100%{transform:translateY(-2px)}50%{transform:translateY(3px)}}
-#pp.list{background:rgba(18,26,50,.92);border:4px solid var(--lav);padding:8px;gap:4px;min-width:230px;max-width:92vw;animation:pin .24s ease-out;box-shadow:0 0 18px rgba(0,0,0,.55)}
-@keyframes pin{from{opacity:0;transform:translateX(var(--dx,-16px))}to{opacity:1;transform:none}}
-#room .mb{padding:10px 8px;font-size:8px;flex:1 1 150px}
-.pt{color:var(--mag);text-align:center;padding-bottom:4px;border-bottom:2px solid var(--dl);font-size:9px}
-.pr{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 8px;padding:7px 8px;cursor:pointer;border:2px solid transparent;font-size:8px}
-.pr:hover{border-color:var(--mag);background:var(--pn)}.pr.off{opacity:.35}.pr .sl{width:100%}
-#dr,#dbk{display:none}
-@media(max-width:900px){#dr{display:inline-block}aside:first-of-type{position:fixed;left:0;top:0;bottom:0;width:min(86vw,320px);z-index:48;transform:translateX(-102%);transition:transform .2s;overflow-y:auto;padding-top:calc(10px + env(safe-area-inset-top,0px))}
-body.dro aside:first-of-type{transform:none}body.dro #dbk{display:block;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:47}}
-.room-card{background:var(--bg);border:2px solid var(--dl);padding:8px;display:flex;justify-content:space-between;align-items:center;cursor:pointer}
-.room-card:hover{border-color:var(--mag)}
-#sh{display:none}#gx{display:none}
-@media(max-width:900px){
-#dr,#pp{display:none!important}
-#c{width:min(96vw,calc(100vh - 300px));width:min(96vw,max(200px,calc(100dvh - 300px)))}
-#hb,#ar,.gt{display:none!important}
-aside:last-of-type{display:none}
-header{flex-wrap:nowrap;gap:6px;padding:8px 10px;font-size:8px}
-header>span{white-space:nowrap}
-#pl{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center}
-.ki{white-space:nowrap;margin-left:auto}.bar{width:60px!important}
-#gb,#sd{padding:6px 8px;min-height:40px}
-#gx{display:block}
-
-#sh{position:fixed;left:0;right:0;bottom:0;z-index:46;background:#161f38;border-top:3px solid var(--lav);padding:6px 8px calc(8px + env(safe-area-inset-bottom,0px))}
-body.sho #sh{display:block;animation:shin .2s ease-out}
-body.sho main{padding-bottom:230px}
-@keyframes shin{from{transform:translateY(100%)}to{transform:none}}
-#sh .hn{width:34px;height:3px;background:var(--dl);margin:0 auto 4px}
-#sh .pi{display:flex;justify-content:space-between;gap:8px;font-size:9px;margin-bottom:4px;height:20px;overflow:hidden;white-space:nowrap}#shh{min-width:0;overflow:hidden;text-overflow:ellipsis}
-#sh .tb{display:flex;gap:6px;margin-bottom:6px}
-#sh .tb button{flex:1;min-height:40px;font-size:9px;padding:6px 4px;background:var(--pn);border-color:var(--lav)}
-#sh .tb button.on{background:var(--mag);border-color:var(--cream)}
-#sh .rw{display:flex;gap:8px;flex:1;min-width:0;scroll-snap-type:x mandatory;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:2px}
-#sh .rw::-webkit-scrollbar{display:none}
-#sh .cr{display:flex;align-items:stretch;gap:6px}
-#sh .cd2{flex:0 0 100%;scroll-snap-align:center;scroll-snap-stop:always;height:96px;overflow:hidden;background:var(--bg);border:2px solid var(--dl);padding:6px;font-size:8px;line-height:1.5;display:flex;flex-direction:column;gap:4px;cursor:pointer}
-#sh .cd2.off{opacity:.35}
-#sh .ds{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-#sh .ht{font-size:7px;color:var(--dl);text-align:center;margin-top:2px;min-height:10px}#shk{height:18px;overflow:hidden}
-}
-@media(max-width:900px) and (max-height:520px){#sh .hn,#sh .pi,#sh .ht{display:none}body.sho main{padding-bottom:150px}#c{width:min(96vw,calc(100dvh - 190px))}}
-.cj{width:100%;display:flex;gap:8px}
-.cj input{flex:1;min-width:0;text-transform:uppercase;letter-spacing:4px}
-#online-join .cj button{padding:10px 14px;font-size:8px}
-#rc{position:fixed;left:50%;top:calc(64px + env(safe-area-inset-top,0px));transform:translateX(-50%);z-index:49;display:none;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;background:var(--pn);border:3px solid var(--mag);padding:8px 10px;font-size:8px;max-width:94vw}
-#rct{animation:rcb 1.2s steps(2) infinite}@keyframes rcb{50%{opacity:.4}}
-#rc b{color:var(--mag);letter-spacing:3px;font-size:12px;font-weight:400}
-#rc button{padding:6px 8px;font-size:8px}
-#mid{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:58;display:none;flex-direction:column;align-items:center;gap:12px;background:rgba(18,26,50,.95);border:4px solid var(--mag);padding:18px 20px;width:min(88vw,460px);text-align:center;pointer-events:none;box-shadow:0 0 28px rgba(238,8,94,.55)}
-#mid.on{display:flex;animation:midin .25s ease-out}
-#mid b{color:var(--mag);font-size:12px;font-weight:400;line-height:1.6}#mid span{font-size:9px;line-height:1.8;color:var(--cream)}
-@keyframes midin{from{opacity:0;transform:translate(-50%,-44%)}to{opacity:1;transform:translate(-50%,-50%)}}
-#xf{position:fixed;inset:0;z-index:57;display:none;align-items:center;justify-content:center;background:rgba(5,3,15,.45)}
-#xf.on{display:flex}
-.xfb{display:flex;flex-direction:column;align-items:center;gap:12px;background:rgba(18,26,50,.97);border:4px solid #9b7bff;padding:16px 18px;width:min(92vw,480px);text-align:center;box-shadow:0 0 28px rgba(155,123,255,.55),inset 0 0 0 3px #121A32;animation:xfin .25s ease-out}
-@keyframes xfin{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
-.xft{color:#c8b4ff;font-size:12px;line-height:1.6;text-shadow:3px 3px 0 #4a2fb0}
-.xfs{font-size:8px;color:var(--cream);line-height:1.8}
-.xfr{display:flex;align-items:center;justify-content:space-around;width:100%;gap:6px}
-.xfp{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:8px;flex:1}
-.xfp canvas{image-rendering:pixelated;animation:flt2 2.4s ease-in-out infinite}
-.xfk{color:var(--dl);font-size:7px}
-.xfa{color:#9b7bff;font-size:14px;animation:xfa .8s steps(2) infinite}
-@keyframes xfa{0%{opacity:1}100%{opacity:.35}}
-.xfq{width:96px;height:96px;display:flex;align-items:center;justify-content:center;border:3px dashed var(--dl);font-size:28px;color:#9b7bff}
-.xfg{display:flex;gap:6px;justify-content:center;flex-wrap:wrap}
-button.xfo{display:flex;flex-direction:column;align-items:center;gap:4px;padding:6px;background:var(--pn);border:3px solid var(--lav);font-size:7px;color:var(--cream)}
-button.xfo canvas{image-rendering:pixelated}
-button.xfo:hover:not(.off){border-color:#9b7bff;box-shadow:0 0 10px #9b7bff}
-button.xfo.off{opacity:.3;cursor:not-allowed}
-button.xfo.on{border-color:#ffe066}
-.xfn{font-size:7px;color:#ffe066;line-height:1.8}
-#vez{position:fixed;left:0;right:0;top:42%;text-align:center;z-index:57;pointer-events:none;display:none;font-size:clamp(14px,4.2vw,28px);color:var(--cream);text-shadow:4px 4px 0 var(--mag);text-transform:uppercase;padding:0 10px}
-#vez.on{display:block;animation:vz 1.25s ease-out forwards}
-@keyframes vz{0%{opacity:0;transform:scale(.7)}15%{opacity:1;transform:scale(1)}75%{opacity:1}100%{opacity:0;transform:scale(1.1)}}
-#pname{font:inherit;background:var(--pn);color:var(--cream);border:3px solid var(--dl);padding:10px;text-align:center;width:min(100%,260px);text-transform:uppercase}
-#pname:focus{outline:none;border-color:var(--mag)}
-#dm{z-index:52;background:radial-gradient(circle at 50% 25%,#3a1f8a 0,#150a38 45%,#05030f 100%);overflow:auto;padding:16px 10px}
-#dm::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(#fff 1px,transparent 1.5px);background-size:46px 46px;opacity:.12;animation:dst 8s linear infinite}
-@keyframes dst{to{background-position:0 46px}}
-.dmb{position:relative;margin:auto;width:min(100%,560px);display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center}
-.dmt{font-size:clamp(11px,3.2vw,16px);color:#d8b8ff;text-shadow:3px 3px 0 #4a2fb0}
-#dmi{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.ib{display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px 12px;background:var(--pn);border:3px solid var(--lav);font-size:8px}
-.ib.on{border-color:var(--mag);box-shadow:0 0 14px var(--mag)}.ib.off{opacity:.45;cursor:default}
-#dmf{display:flex;justify-content:space-around;align-items:flex-end;width:100%;gap:10px}
-.fg{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:8px;flex:1}
-.fg canvas{width:112px;height:112px;image-rendering:pixelated;animation:flt2 2.4s ease-in-out infinite}
-@keyframes flt2{0%,100%{transform:translateY(-4px)}50%{transform:translateY(5px)}}
-#dms{font-size:8px;color:var(--cream);line-height:1.8}
-#dmr{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:9px;color:#ffe066;line-height:1.6}
-#dmr .pk{display:flex;gap:30px;align-items:center}
-
-.ic{display:block;flex:none;image-rendering:pixelated}
-.hc{flex-direction:row;align-items:center;gap:8px;cursor:pointer;padding:6px 8px;font-size:8px}
-.hc:hover{border-color:var(--mag)}
-.hc .tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
-.hc .nm{flex:1;min-width:0;line-height:1.4;font-weight:400}.hc .tx .nm{flex:none}
-.hc .cc{font-size:7px}
 .inf{flex:none;width:22px;height:22px;display:grid;place-items:center;border:2px solid var(--dl);background:var(--pn);color:var(--rose);font:inherit;font-size:9px;padding:0;min-height:0}
 aside .inf{display:none}
 .cg{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
@@ -395,6 +285,13 @@ body.sho #mbar{display:none}
 #home #lang button{padding:7px 9px;font-size:8px;background:var(--pn);border:3px solid var(--lav);color:var(--cream);margin:0}
 #home #lang button+button{margin-left:-3px}
 #home #lang button.on{background:var(--mag);border-color:var(--cream);position:relative;z-index:1}
+#ftu{z-index:70}#ftu .mod{align-items:center;text-align:center;gap:14px}#ftu h2{line-height:1.6}#ftu p{font-size:9px;line-height:1.8;color:var(--cream)}
+#tut{position:fixed;left:50%;transform:translateX(-50%);top:calc(58px + env(safe-area-inset-top));width:min(94vw,520px);z-index:58;display:none;background:rgba(18,26,50,.96);border:3px solid var(--mag);padding:8px 10px;font-size:8px;line-height:1.8;color:var(--cream);text-align:left;box-shadow:0 0 18px rgba(255,45,85,.45)}
+#tut .tc{display:flex;justify-content:space-between;align-items:center;color:#ffe066;margin-bottom:4px}
+#tut button{padding:6px 8px;font-size:7px}
+#tut .tb{display:flex;justify-content:flex-end;margin-top:6px}
+#tuthl{position:fixed;display:none;pointer-events:none;z-index:57;border:3px solid #ffe066;box-shadow:0 0 14px #ffe066;animation:tuthl .8s steps(2) infinite}
+@keyframes tuthl{0%{opacity:1}100%{opacity:.3}}
 </style>
 </head>
 <body>
@@ -437,6 +334,7 @@ body.sho #mbar{display:none}
   </div>
 </div>
 
+<div id="ftu" class="ov"><div class="mod"><h2>É A SUA PRIMEIRA VEZ NO JOGO?</h2><p>DESEJA UM TREINAMENTO ANTES DE TUDO?</p><div class="rbt"><button id="ftu-y">SIM, QUERO O TREINO</button><button id="ftu-n" class="alt">NÃO, JÁ SEI JOGAR</button></div></div></div>
 <div id="scr">
   <div id="home">
     <div class="logo">GEEK<br>CHESS</div>
@@ -716,7 +614,7 @@ function FDEST(p,m){let best=null,bd=-1;for(let a=-1;a<2;a++)for(let b=-1;b<2;b+
 // ===== IA usa cards =====
 const AIV={KING:12,QUEEN:9,ROOK:5,BISHOP:3,KNIGHT:3,PAWN:1};
 const aiPw=(q,d)=>{const h=Math.max(1,q.hp+(q.bar||0));return AIV[q.type]*10*(d>=h?1.4:Math.min(1,d/h))};
-const aiSpend=(sl,k)=>{const L=handS.WHITE[sl],i=L.indexOf(k);if(i<0)return;const n=deal(PL(sl),1,[...L,k]);L[i]=n.length?n[0]:k};
+const aiSpend=(sl,k)=>{};
 const aiOk=(t,p)=>{const c=cur;cur='WHITE';try{return !!t.ok(p)}finally{cur=c}};
 async function aiCast(k,p,t){const c=TECH[k];busy=true;kiS.WHITE-=cost(k,p);aiSpend('t',k);ui();log('<b>'+c.n+'</b>!',c.col);
  await cutin(c.n,c.col);caster=p;try{await c.run(p,t)}finally{caster=null}await flushTransf();FX.dimT=0;await sleep(250);if(!over)judge('BLACK');busy=true}
@@ -1170,8 +1068,9 @@ const TAGS={lanca:['ATAQUE','LINHA'],orbe:['ATAQUE','CORPO A CORPO'],crescente:[
 document.querySelectorAll('.card').forEach(c=>{const t=TECH[c.dataset.k]||EQUIP[c.dataset.k];c.title=t.d;const L=TAGS[c.dataset.k]||[t.slot=='def'?'DEFESA':'ATAQUE'];c.insertAdjacentHTML('beforeend','<div class="sl">'+L.map(x=>'<span style="color:'+(TC[x]||'#887D97')+'">'+x+'</span>').join(' · ')+'</div>')});
 const rnd=n=>Math.floor((rs?rs():Math.random())*n);
 const deal=(P,n,not)=>{const a=Object.keys(P).filter(k=>!not.includes(k)),r=[];while(r.length<n&&a.length)r.push(a.splice(rnd(a.length),1)[0]);return r};
-function dealHand(){const h=()=>({t:deal(TECH,6,[]),e:deal(EQUIP,3,[]),r:deal(TRAP,2,[])});handS={BLACK:h(),WHITE:h()};kiS={BLACK:CFG.aura.start,WHITE:CFG.aura.start};cur='BLACK';played={BLACK:0,WHITE:0};hand=handS.BLACK;ki=kiS.BLACK}
-function spend(sl,k){const L=hand[sl],i=L.indexOf(k);if(i<0)return;const n=deal(PL(sl),1,[...L,k]);L[i]=n.length?n[0]:k}
+const SET={t:['orbe','crescente','flash','eclipse','kiblast','kunai','reviv'],e:['ultra','barrier','couraca'],r:['counter','kawa']};
+function dealHand(){const h=()=>({t:[...SET.t],e:[...SET.e],r:[...SET.r]});handS={BLACK:h(),WHITE:h()};kiS={BLACK:CFG.aura.start,WHITE:CFG.aura.start};cur='BLACK';played={BLACK:0,WHITE:0};hand=handS.BLACK;ki=kiS.BLACK}
+function spend(sl,k){}
 const tagH=k=>(TAGS[k]||[]).map(x=>'<span style="color:'+(TC[x]||'#887D97')+'">'+x+'</span>').join(' · ');
 
 const ICB={"transf": "......+...|....##.+..|...####...|....##....|...####...|....##....|..######..|.########.|.########.|..........", "lanca": "..........|..........|.....#....|......#...|-----++##.|-----++##.|......#...|.....#....|..........|..........", "orbe": "...####...|..######..|.##++####.|.#+######.|##########|#######-##|.####--##.|.##-----#.|..######..|...####...", "crescente": "...####...|.###......|###.......|##........|##........|##........|###.......|.###......|...####...|..........", "sun": "....##....|.#..##..#.|..#.++.#..|....++....|###++++###|###++++###|....++....|..#.++.#..|.#..##..#.|....##....", "eclipse": "...####...|..#....#..|.#.####.#.|#.######.#|#.######.#|#.######.#|#.######.#|.#.####.#.|..#....#..|...####...", "flash": ".....+++..|....###...|...###....|..#####...|.#######..|.....##...|....##....|...##.....|..##......|..#.......", "vazio": "..######..|.#------#.|#--####--#|#-##..##-#|#-#.++.#-#|#-#.++.#-#|#-##..##-#|#--####--#|.#------#.|..######..", "clone": "..........|.##....--.|.##....--.|..#.....-.|.##....--.|.##....--.|.##....--.|####..----|####..----|..........", "rocket": "..######..|.#......#.|#..+..+..#|#........#|.#......#.|..##..##..|....##....|...##.....|..##......|.##.......", "spirit": "..-..-..-.|...-..-...|...####...|..######..|.##++####.|.#+######.|.########.|.########.|..######..|...####...", "smash": "..........|.##.##.##.|.########.|.########.|##########|##+#######|.########.|..######..|..######..|..........", "kunai": "........##|.......#+#|.....##+##|....##+##.|....#+#...|...###....|..-#......|.##.......|#.#.......|.#........", "kiblast": "..........|......###.|.....#####|-...##+###|--..######|--..######|-...######|.....#####|......###.|..........", "troca": ".....#....|......#...|.#######..|......#...|.....#....|...#......|..#.......|.#######..|..#.......|...#......", "dominio": "..........|...####...|..#----#..|.#--++--#.|.#-+--+-#.|#---++---#|#--------#|##########|..........|..........", "reviv": "...####...|..######..|.###++###.|.###++###.|.#++++++#.|.###++###.|..##++##..|..######..|...####...|...####...", "centelha": "....##....|....##....|....##....|...####...|####++####|####++####|...####...|....##....|....##....|....##....", "ultra": "....#.....|...##.....|...###.#..|..#######.|.#########|.###+#####|.##+++####|.##+++####|..#######.|...#####..", "barrier": "##########|#++#######|#+########|#########-|#########-|.#######-.|.#######-.|..#####-..|...###-...|....##....", "furia": "....##....|...####...|..######..|.########.|..........|....##....|...####...|..######..|.########.|..........", "precog": "..........|..........|...####...|.##----##.|#--####--#|#-##++##-#|#--####--#|.##----##.|...####...|..........", "cloak": "...####...|..######..|.########.|.#+######.|##########|##########|##########|#-#-##-#-#|#-#-..-#-#|..........", "couraca": "##......##|###....###|##########|#+########|#+########|.########.|.########.|..######..|..##..##..|..........", "selo": "...####...|..#....#..|.#..##..#.|#...##...#|#.######.#|#.######.#|#...##...#|.#..##..#.|..#....#..|...####...", "guardiao": "...####...|..######..|.########.|.##+##+##.|.########.|.########.|.########.|.########.|.##.##.##.|.#..##..#.", "counter": "..........|...#####..|..#.....#.|.#.......#|.#.......#|.#.......#|###......#|.#........|..........|..........", "bomb": "......+#..|.....#....|....####..|...######.|..########|..#+######|..########|..########|...######.|....####..", "kawa": "..........|..#######.|.#--++####|#-#+--####|#-#--+####|#-#+--####|.#--++####|..#######.|..........|.........."};
@@ -1295,7 +1194,7 @@ $('rm').onclick=e=>{
  sc.querySelectorAll('input[data-p]').forEach(i=>{if(st&&!i.dataset.p.endsWith('.'+st.value))return;const v=Math.max(+i.min,Math.min(+i.max,getCfg(i.dataset.p)+n*b.dataset.d));setCfg(i.dataset.p,v);i.value=v})};
 $('rm').onchange=e=>{const i=e.target,p=i.dataset.p;if(p)i.value=getCfg(p)};
 function buildCat(){const c=(k,P)=>'<div class="hc" data-k="'+k+'" style="--c:'+P[k].col+'">'+ico(k,28)+'<b class="nm" style="color:'+P[k].col+'">'+P[k].n+'</b><span class="inf">i</span></div>';
- $('cl').innerHTML='<h3>TÉCNICAS</h3><div class="cg">'+Object.keys(TECH).map(k=>c(k,TECH)).join('')+'</div><h3>EQUIPÁVEIS</h3><div class="cg">'+Object.keys(EQUIP).map(k=>c(k,EQUIP)).join('')+'</div><h3>ARMADILHAS</h3><div class="cg">'+Object.keys(TRAP).map(k=>c(k,TRAP)).join('')+'</div>'}
+ $('cl').innerHTML='<h3>TÉCNICAS</h3><div class="cg">'+SET.t.map(k=>c(k,TECH)).join('')+'</div><h3>EQUIPÁVEIS</h3><div class="cg">'+SET.e.map(k=>c(k,EQUIP)).join('')+'</div><h3>ARMADILHAS</h3><div class="cg">'+SET.r.map(k=>c(k,TRAP)).join('')+'</div>'}
 const show=id=>{$('cat').style.display=id=='cat'?'flex':'none';$('home').style.display=id=='home'?'flex':'none';$('room').style.display=id=='room'?'flex':'none';$('online-join').style.display=id=='online-join'?'flex':'none';$('scr').style.display='flex'};
 
 function handleNetData(d){
@@ -1607,7 +1506,7 @@ const EN_D={
 'CLIQUE NUMA CASA AMARELA PARA TELEPORTAR (A KUNAI SOME). PRÓXIMO LANÇAMENTO: AURA ':'CLICK A YELLOW SQUARE TO TELEPORT (THE KUNAI VANISHES). NEXT THROW: AURA ',
 'ELE CHEGOU POR UMA TÉCNICA E SÓ SERÁ PROMOVIDO APÓS 2 TURNOS':'IT ARRIVED BY A TECHNIQUE AND WILL ONLY BE PROMOTED AFTER 2 TURNS',
 'DURA 2 TURNOS · SEM REI · NUNCA ACIMA DO ORIGINAL':'LASTS 2 TURNS · NO KING · NEVER ABOVE THE ORIGINAL',
-'XADREZ COM PODERES DE ANIME':'CHESS WITH ANIME POWERS',
+'É A SUA PRIMEIRA VEZ NO JOGO?':'IS THIS YOUR FIRST TIME PLAYING?','DESEJA UM TREINAMENTO ANTES DE TUDO?':'WOULD YOU LIKE SOME TRAINING FIRST?','SIM, QUERO O TREINO':'YES, TRAIN ME','NÃO, JÁ SEI JOGAR':'NO, I KNOW HOW','XADREZ COM PODERES DE ANIME':'CHESS WITH ANIME POWERS',
 'VALORES PADRÃO · AJUSTÁVEIS EM CRIAR SALA':'DEFAULT VALUES · ADJUSTABLE IN CREATE ROOM',
 'AGUARDE SUA VEZ DE ESCOLHER':'WAIT YOUR TURN TO PICK',
 'EMPATE NO JOGO: NINGUÉM VENCEU':'DRAW: NOBODY WON',
@@ -1696,11 +1595,61 @@ const EN_D={
 const EN_K=Object.keys(EN_D).sort((a,b)=>b.length-a.length);
 function trEN(s){if(!s||!/[A-Za-zÀ-ú]/.test(s))return s;if(EN_D[s]!==undefined)return EN_D[s];let o=s;for(const k of EN_K){if(o.indexOf(k)>=0)o=o.split(k).join(EN_D[k])}return o}
 const TR_ATTR=['placeholder','title','aria-label'];
-function trNode(n){if(n.nodeType===3){const v=n.nodeValue,t=trEN(v);if(t!==v)n.nodeValue=t}else if(n.nodeType===1){if(n.tagName==='SCRIPT'||n.tagName==='STYLE')return;for(const a of TR_ATTR){if(n.hasAttribute&&n.hasAttribute(a)){const v=n.getAttribute(a),t=trEN(v);if(t!==v)n.setAttribute(a,t)}}for(const c of n.childNodes)trNode(c)}}
+function trNode(n){if(n.nodeType===3&&n.parentElement&&n.parentElement.closest('.notr'))return;if(n.nodeType===1&&n.classList.contains('notr'))return;if(n.nodeType===3){const v=n.nodeValue,t=trEN(v);if(t!==v)n.nodeValue=t}else if(n.nodeType===1){if(n.tagName==='SCRIPT'||n.tagName==='STYLE')return;for(const a of TR_ATTR){if(n.hasAttribute&&n.hasAttribute(a)){const v=n.getAttribute(a),t=trEN(v);if(t!==v)n.setAttribute(a,t)}}for(const c of n.childNodes)trNode(c)}}
 function initLang(){document.documentElement.lang=LANG=='en'?'en':'pt-BR';if(LANG!=='en')return;try{document.title=trEN(document.title)}catch(e){}trNode(document.body);
  new MutationObserver(ms=>{for(const m of ms){if(m.type==='characterData')trNode(m.target);else if(m.type==='attributes')trNode(m.target);else m.addedNodes.forEach(trNode)}}).observe(document.body,{childList:true,subtree:true,characterData:true,attributes:true,attributeFilter:TR_ATTR})}
 function langUI(){const w=$('lang');if(!w)return;w.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.l===LANG));
  w.onclick=e=>{const b=e.target.closest('button');if(!b||b.dataset.l===LANG)return;try{localStorage.setItem('gc_lang',b.dataset.l)}catch(x){}location.reload()}}
+
+
+// ===== Treinamento guiado =====
+const TUT={on:0,i:0,foe:null,w:0,iv:0,gv:0,kp:null,kx:0,ky:0};
+const tl=o=>o[LANG]||o.pt;
+const tutFirst=(sl,k)=>{const H=handS.BLACK[sl],i=H.indexOf(k);if(i>0){H.splice(i,1);H.unshift(k)}ui()};
+const tutDesel=()=>{sel=null;moves=[];armed=null;eqk=null;tgt=[];closePop();ui()};
+const tutKi=n=>{if(ki<n){ki=Math.min(KMAX,Math.max(n,ki));ui()}};
+const tutPlaceFoe=()=>{const f=B.flat().find(p=>p&&p.team=='WHITE'&&p.type=='PAWN');if(!f)return;
+ for(const x of [4,3,5,2,6,1,0,7]){if(!B[5][x]&&[x-1,x,x+1].some(a=>a>=0&&a<8&&B[6][a]&&B[6][a].team=='BLACK'&&!B[6][a].clone)){B[f.y][f.x]=null;f.x=x;f.y=5;f.dx=x;f.dy=5;B[5][x]=f;TUT.foe=f;burst(x*T+40,5*T+40,24,'#ff2d55',5,6);ring(x*T+40,5*T+40,'#ff2d55',70);return}}}
+const TSTEPS=[
+ {t:{pt:'BEM-VINDO AO GEEK CHESS! AQUI O XADREZ GANHA PODERES. VAMOS AO BÁSICO, É RAPIDINHO.',en:'WELCOME TO GEEK CHESS! HERE CHESS GETS POWERS. LET\'S COVER THE BASICS, IT\'S QUICK.'}},
+ {t:{pt:'VOCÊ JOGA COM AS PEÇAS DE BAIXO. AS DE CIMA SÃO DA IA. AS PEÇAS SE MOVEM COMO NO XADREZ E CADA UMA TEM HP (VIDA).',en:'YOU PLAY THE BOTTOM PIECES. THE TOP ONES ARE THE AI\'S. PIECES MOVE LIKE IN CHESS AND EACH ONE HAS HP (HEALTH).'},hl:()=>({sq:[0,6,7,7]})},
+ {t:{pt:'MOVA UMA PEÇA: TOQUE NELA E DEPOIS NA CASA DE DESTINO.',en:'MOVE A PIECE: TAP IT, THEN TAP THE DESTINATION SQUARE.'},hl:()=>({sq:[0,6,7,6]}),need:()=>turn>=2,set:tutDesel},
+ {t:{pt:'ESTA É A SUA AURA: A ENERGIA QUE PAGA OS PODERES. ELA SOBE A CADA TURNO. PARA O TREINO, ENCHEMOS A SUA.',en:'THIS IS YOUR AURA: THE ENERGY THAT PAYS FOR POWERS. IT GROWS EVERY TURN. FOR TRAINING, WE FILLED YOURS.'},hl:()=>({el:'.ki'}),set:()=>{ki=KMAX;ui()}},
+ {t:{pt:'AGORA OS CARDS! TOQUE EM UMA PEÇA SUA. OS CARDS DELA APARECEM: TÉCNICAS (ATAQUES), EQUIPÁVEIS (DEFESAS) E ARMADILHAS (SURPRESAS).',en:'NOW THE CARDS! TAP ONE OF YOUR PIECES. ITS CARDS APPEAR: TECHNIQUES (ATTACKS), EQUIPMENT (DEFENSES) AND TRAPS (SURPRISES).'},need:()=>!!sel&&sel.team=='BLACK',set:tutDesel},
+ {t:()=>MOB()?{pt:'ARRASTE OS CARDS PARA O LADO PARA VER OS OUTROS. PARA LER UM CARD, TOQUE NO BOTÃO "i" DELE: ABRE A DESCRIÇÃO COMPLETA. DEPOIS TOQUE EM FECHAR.',en:'DRAG THE CARDS SIDEWAYS TO SEE THE OTHERS. TO READ A CARD, TAP ITS "i" BUTTON: IT OPENS THE FULL DESCRIPTION. THEN TAP CLOSE.'}:{pt:'PARA LER UM CARD, CLIQUE NELE NO PAINEL DA ESQUERDA (OU NO BOTÃO "i" DELE). ABRE A DESCRIÇÃO COMPLETA. DEPOIS CLIQUE EM FECHAR.',en:'TO READ A CARD, CLICK IT IN THE LEFT PANEL (OR ITS "i" BUTTON). IT OPENS THE FULL DESCRIPTION. THEN CLICK CLOSE.'},need:()=>$('ipop').classList.contains('on')},
+ {t:{pt:'ESCOLHA EQUIPÁVEL E USE REFLEXO ASTRAL (3 DE AURA). A PEÇA ESQUIVA O PRÓXIMO ATAQUE INIMIGO.',en:'PICK EQUIPMENT AND USE ASTRAL REFLEX (3 AURA). THE PIECE DODGES THE NEXT ENEMY ATTACK.'},need:()=>B.flat().some(p=>p&&p.team=='BLACK'&&p.ult),set:()=>tutKi(5)},
+ {t:{pt:'AGORA UMA ARMADILHA: ESCOLHA ARMADILHA E ARME KAWARIMI (3 DE AURA) EM OUTRA PEÇA. ELA FICA ESCONDIDA: O RIVAL NÃO VÊ.',en:'NOW A TRAP: PICK TRAP AND SET KAWARIMI (3 AURA) ON ANOTHER PIECE. IT STAYS HIDDEN: THE RIVAL CAN\'T SEE IT.'},need:()=>B.flat().some(p=>p&&p.team=='BLACK'&&p.trap),set:()=>{tutDesel();tutKi(5);tutFirst('r','kawa')}},
+ {t:{pt:'UM INIMIGO SE APROXIMOU! SELECIONE UMA PEÇA AO LADO DELE, ESCOLHA TÉCNICA, DEPOIS ORBE ESPIRAL (2 DE AURA) E TOQUE NO ALVO.',en:'AN ENEMY APPROACHED! SELECT A PIECE NEXT TO IT, PICK TECHNIQUE, THEN SPIRAL ORB (2 AURA) AND TAP THE TARGET.'},
+  hl:()=>TUT.foe?{sq:[TUT.foe.x,TUT.foe.y,TUT.foe.x,TUT.foe.y]}:null,need:()=>!!TUT.foe&&(TUT.foe.hp<TUT.foe.mhp||B[TUT.foe.y][TUT.foe.x]!==TUT.foe),set:()=>{tutDesel();tutKi(5);tutPlaceFoe()}},
+ {t:{pt:'AS PEÇAS DERROTADAS VÃO PARA O CEMITÉRIO. O REI PODE REANIMAR UMA. E O BOTÃO PROVOCAR SERVE PARA ZOAR O RIVAL!',en:'DEFEATED PIECES GO TO THE GRAVEYARD. THE KING CAN REANIMATE ONE. AND THE TAUNT BUTTON IS FOR TEASING THE RIVAL!'},hl:()=>({el:['#mbar','#gw']}),set:tutDesel},
+ {t:{pt:'AGORA, REANIMAR! UMA PEÇA SUA CAIU E FOI PARA O CEMITÉRIO. SÓ O REI PODE REANIMAR: SELECIONE O REI, ESCOLHA TÉCNICA, DEPOIS REANIMAÇÃO (6 DE AURA) E TOQUE NA CASA ONDE ELA VOLTA, COM METADE DO HP. SE HOUVER VÁRIAS PEÇAS, ESCOLHA QUAL VOLTA NO CEMITÉRIO.',en:'NOW, REANIMATE! ONE OF YOUR PIECES FELL AND WENT TO THE GRAVEYARD. ONLY THE KING CAN REANIMATE: SELECT THE KING, PICK TECHNIQUE, THEN REANIMATION (6 AURA) AND TAP THE SQUARE WHERE IT RETURNS, WITH HALF HP. IF THERE ARE SEVERAL PIECES, PICK WHICH ONE RETURNS IN THE GRAVEYARD.'},
+  hl:()=>({el:['#mbar','#gw']}),need:()=>TUT.gv>0&&GRAVE.BLACK.length<TUT.gv,set:()=>{tutDesel();tutKi(8);tutFirst('t','reviv');const q=B[6].find(p=>p&&p.team=='BLACK'&&p.type=='PAWN'&&!p.clone);if(q){kill(q);TUT.gv=GRAVE.BLACK.length}ui()}},
+ {t:{pt:'KUNAI DO TROVÃO (3 DE AURA): ESCOLHA TÉCNICA, DEPOIS KUNAI E TOQUE EM UMA CASA VAZIA. ELA É ARREMESSADA, FERE INIMIGOS NO CAMINHO E FICA FINCADA NO TABULEIRO.',en:'THUNDER KUNAI (3 AURA): PICK TECHNIQUE, THEN KUNAI AND TAP AN EMPTY SQUARE. IT IS THROWN, HURTS ENEMIES ON ITS PATH AND STAYS STUCK IN THE BOARD.'},
+  need:()=>B.flat().some(p=>p&&p.team=='BLACK'&&p.kn&&p.kn.length),set:()=>{tutDesel();tutKi(5);tutFirst('t','kunai')}},
+ {t:{pt:'AGORA O TELEPORTE: SELECIONE A PEÇA QUE LANÇOU A KUNAI E TOQUE NA CASA AMARELA DELA. A PEÇA TELEPORTA ATÉ LÁ E A KUNAI SOME. CADA KUNAI LANÇADA TAMBÉM DÁ +1 DE AURA.',en:'NOW THE TELEPORT: SELECT THE PIECE THAT THREW THE KUNAI AND TAP ITS YELLOW SQUARE. THE PIECE TELEPORTS THERE AND THE KUNAI VANISHES. EACH KUNAI THROWN ALSO GIVES +1 AURA.'},
+  hl:()=>TUT.kp&&TUT.kp.kn&&TUT.kp.kn.length?{sq:[TUT.kx,TUT.ky,TUT.kx,TUT.ky]}:null,need:()=>!!TUT.kp&&!(TUT.kp.kn&&TUT.kp.kn.length)&&TUT.kp.x==TUT.kx&&TUT.kp.y==TUT.ky,
+  set:()=>{tutDesel();const p=B.flat().find(p=>p&&p.team=='BLACK'&&p.kn&&p.kn.length);if(p){TUT.kp=p;TUT.kx=p.kn[0].x;TUT.ky=p.kn[0].y}}},
+ {t:{pt:'OBJETIVO: DERROTAR O REI RIVAL. NO MODO CLÁSSICO, CAPTURAR ELIMINA A PEÇA NA HORA E XEQUE-MATE VENCE. A IA TAMBÉM USA CARDS!',en:'GOAL: DEFEAT THE RIVAL KING. IN CLASSIC MODE, CAPTURING REMOVES THE PIECE AT ONCE AND CHECKMATE WINS. THE AI USES CARDS TOO!'}},
+ {t:{pt:'TREINAMENTO CONCLUÍDO! BOA SORTE NA PARTIDA!',en:'TRAINING COMPLETE! GOOD LUCK IN THE MATCH!'},last:1}];
+function tutHL(){const h=$('tuthl'),st=TSTEPS[TUT.i],d=st&&st.hl&&st.hl();if(!d){h.style.display='none';return}
+ let r;if(d.sq){const c=C.getBoundingClientRect(),k=c.width/8;r={left:c.left+d.sq[0]*k,top:c.top+d.sq[1]*k,width:(d.sq[2]-d.sq[0]+1)*k,height:(d.sq[3]-d.sq[1]+1)*k}}
+ else{const e=[].concat(d.el).map(s=>document.querySelector(s)).find(e=>e&&e.offsetParent);if(!e){h.style.display='none';return}r=e.getBoundingClientRect()}
+ Object.assign(h.style,{display:'block',left:r.left-3+'px',top:r.top-3+'px',width:r.width+6+'px',height:r.height+6+'px'})}
+function tutGo(i){const st=TSTEPS[i];if(!st){tutEnd(1);return}TUT.i=i;TUT.w=0;if(st.set)st.set();
+ $('tutx').textContent=tl(typeof st.t==='function'?st.t():st.t);const n=$('tut-next');n.textContent=st.need?tl({pt:'PULAR PASSO',en:'SKIP STEP'}):st.last?tl({pt:'JOGAR',en:'PLAY'}):tl({pt:'PRÓXIMO',en:'NEXT'});$('tutc').textContent=(i+1)+'/'+TSTEPS.length;tutHL()}
+function tutTick(){if(!TUT.on)return;if($('scr').style.display!=='none'){tutEnd(0);return}tutHL();const st=TSTEPS[TUT.i];
+ if(st&&st.need&&!TUT.w&&!busy&&st.need()){TUT.w=1;const i=TUT.i;setTimeout(()=>{if(TUT.on&&TUT.i===i)tutGo(i+1)},1500)}}
+function tutStart(){TUT.on=1;TUT.foe=null;$('tut').style.display='block';clearInterval(TUT.iv);TUT.iv=setInterval(tutTick,250);tutGo(0)}
+function tutEnd(fresh){TUT.on=0;clearInterval(TUT.iv);$('tut').style.display='none';$('tuthl').style.display='none';if(fresh){tutDesel();begin()}}
+{const _e0=enemy0;enemy0=async function(){if(TUT.on){await sleep(250);return}return _e0()}}
+{const w=document.createElement('div');w.id='tut';w.className='notr';w.innerHTML='<div class="tc"><span id="tutc"></span><button id="tut-x" class="alt"></button></div><div id="tutx"></div><div class="tb"><button id="tut-next"></button></div>';document.body.append(w);
+ const h=document.createElement('div');h.id='tuthl';document.body.append(h);
+ $('tut-x').textContent=tl({pt:'SAIR DO TREINO',en:'EXIT TRAINING'});
+ $('tut-next').onclick=()=>{const st=TSTEPS[TUT.i];if(st&&st.last)tutEnd(1);else tutGo(TUT.i+1)};$('tut-x').onclick=()=>tutEnd(1)}
+const startGame=t=>{isOnline=false;CFG=JSON.parse(JSON.stringify(DEF));RN='';begin();if(t)tutStart()};
+$('b2').onclick=()=>$('ftu').classList.add('on');
+$('ftu-y').onclick=()=>{$('ftu').classList.remove('on');startGame(1)};
+$('ftu-n').onclick=()=>{$('ftu').classList.remove('on');startGame(0)};
 
 applyCfg();reset();show('home');langUI();initLang();requestAnimationFrame(draw);
 // Link de convite: abre direto na sala (?sala=ABCDE)
